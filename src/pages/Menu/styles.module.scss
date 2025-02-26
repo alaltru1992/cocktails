@@ -1,3 +1,17 @@
 .menu-page{
-
+  height: 85vh;
+  width: 20vw;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: black 1px solid;
+  &-item{
+    width: 100%;
+    cursor: pointer;
+    &:active{
+      background: dimgrey;
+    }
+  }
+  &-text{
+    color: #000;
+  }
 }
