@@ -1,5 +1,7 @@
+import './styles/styles.scss'
+
 export default () =>{
     return <div className='app'>
-    AZAZAZ
+       AZAZAZ
     </div>
 }
