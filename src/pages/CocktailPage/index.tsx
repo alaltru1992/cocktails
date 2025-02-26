@@ -1,0 +1,6 @@
+import classes from './styles.module.scss'
+
+export default () =>{
+    return <div className={classes['cocktail-page']}>
+    </div>
+}
