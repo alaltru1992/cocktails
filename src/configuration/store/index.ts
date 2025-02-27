@@ -2,7 +2,7 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import drinksSlice from './reducers/drinks'
 
 const rootReducer = combineReducers({
-    drinks: drinksSlice,
+    drinksSlice: drinksSlice,
 })
 
 export const setupStore = () =>{

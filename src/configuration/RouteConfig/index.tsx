@@ -25,18 +25,18 @@ export const RouteConfig: Record<AppRoutes, RouteProps> = {
     },
     [AppRoutes.MARGARITA]:{
         path: RoutePathes.margarita,
-        element: <DrinkPage  key={'margarita'}/>
+        element: <DrinkPage />
     },
     [AppRoutes.MOJITO]:{
         path: RoutePathes.mojito,
-        element: <DrinkPage  key={'mojito'}/>
+        element: <DrinkPage />
     },
     [AppRoutes.A1]:{
         path: RoutePathes.a1,
-        element: <DrinkPage  key={'a1'}/>
+        element: <DrinkPage />
     },
     [AppRoutes.KIR]:{
         path: RoutePathes.kir,
-        element: <DrinkPage  key={'kir'}/>
+        element: <DrinkPage />
     },
 }

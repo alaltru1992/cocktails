@@ -6,7 +6,7 @@ const initialState: IDrinksState = {
 }
 
 export const drinksSlice = createSlice({
-    name: 'drinks',
+    name: 'drinksSlice',
     initialState,
     reducers:{
         addDrink: (state, action: PayloadAction<IDrinkRecord>) => {
