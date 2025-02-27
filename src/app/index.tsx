@@ -1,5 +1,5 @@
 import './styles/styles.scss';
-import Router from '../config/router'
+import Router from '../configuration/router'
 import MenuPage from 'pages/Menu';
 import CocktailsPage from 'pages/CocktailsPage'
 

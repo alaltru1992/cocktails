@@ -1,4 +1,4 @@
-export interface IDrinks{
+export interface IDrink{
     strDrink: string,
     strCategory: string,
     strGlass: string,
@@ -19,4 +19,13 @@ export interface IDrinks{
     strIngredient13: string | null,
     strIngredient14: string | null,
     strIngredient15: string | null,
+}
+
+export interface IDrinkRecord{
+    key: string,
+    data: IDrink,
+}
+
+export interface IDrinksState{
+    drinks: IDrinkRecord[],
 }
