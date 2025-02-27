@@ -1,10 +1,13 @@
 import './styles/styles.scss';
-import CocktailPage from 'pages/CocktailPage';
+import Router from '../config/router'
 import MenuPage from 'pages/Menu';
+import CocktailsPage from 'pages/CocktailsPage'
 
 export default () =>{
     return <div className='app'>
         <MenuPage />
-        <CocktailPage />
+        <CocktailsPage>
+            <Router />
+        </CocktailsPage>
     </div>
 }
