@@ -2,12 +2,10 @@
   padding: 12px 10px 0 20px;
   position: relative;
   &__img{
-
     position: absolute;
     top: 30px;
     right: 26px;
-    width: 40%;
-    height: 50%;
+    width: 20%;
     display: block;
     margin: 0 auto;
   }
@@ -19,6 +17,7 @@
     display: block;
     font-size: 18px;
     margin: 8px;
+    max-width: 50%;
     &-main{
       font-size: 22px;
     }

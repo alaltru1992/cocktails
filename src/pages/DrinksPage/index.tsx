@@ -36,10 +36,10 @@ export default () =>{
         }
     }
     useEffect(() =>{
-        if(!currentDrinksVariants ){
+        if(!drinks.find(({key}) => key === drinkName) ){
             getCocktailData(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`, drinkName)
         }
-    },[drinkName, currentDrinksVariants])
+    },[drinkName, drinks])
 
     if(currentDrinksVariants){
 
