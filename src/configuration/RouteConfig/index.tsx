@@ -1,6 +1,6 @@
 import React from "react";
 import {RouteProps} from 'react-router'
-import DrinkPage from 'pages/DrinkPage';
+import DrinksPage from 'pages/DrinksPage';
 
 export enum AppRoutes {
     MARGARITA = 'margarita',
@@ -25,18 +25,18 @@ export const RouteConfig: Record<AppRoutes, RouteProps> = {
     },
     [AppRoutes.MARGARITA]:{
         path: RoutePathes.margarita,
-        element: <DrinkPage />
+        element: <DrinksPage />
     },
     [AppRoutes.MOJITO]:{
         path: RoutePathes.mojito,
-        element: <DrinkPage />
+        element: <DrinksPage />
     },
     [AppRoutes.A1]:{
         path: RoutePathes.a1,
-        element: <DrinkPage />
+        element: <DrinksPage />
     },
     [AppRoutes.KIR]:{
         path: RoutePathes.kir,
-        element: <DrinkPage />
+        element: <DrinksPage />
     },
 }

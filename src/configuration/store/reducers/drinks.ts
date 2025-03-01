@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IDrinksState, IDrinkRecord} from 'types';
 
 const initialState: IDrinksState = {
-    drinks: [],
+    drinksArray: [],
 }
 
 export const drinksSlice = createSlice({
@@ -10,7 +10,7 @@ export const drinksSlice = createSlice({
     initialState,
     reducers:{
         addDrink: (state, action: PayloadAction<IDrinkRecord>) => {
-            state.drinks.push(action.payload);
+            state.drinksArray.push(action.payload);
         },
     }
 })

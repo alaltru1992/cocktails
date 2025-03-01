@@ -1,10 +1,13 @@
 export interface IDrink{
+    idDrink: string,
     strDrink: string,
     strCategory: string,
     strGlass: string,
     strDrinkThumb: string,
     strInstructions: string,
     strIngredient1: string,
+    strMeasure1:string,
+    strAlcoholic: string,
     strIngredient2: string | null,
     strIngredient3: string | null,
     strIngredient4: string | null,
@@ -19,13 +22,31 @@ export interface IDrink{
     strIngredient13: string | null,
     strIngredient14: string | null,
     strIngredient15: string | null,
+    strMeasure2: string | null,
+    strMeasure3: string | null,
+    strMeasure4: string | null,
+    strMeasure5: string | null,
+    strMeasure6: string | null,
+    strMeasure7: string | null,
+    strMeasure8: string | null,
+    strMeasure9: string | null,
+    strMeasure10: string | null,
+    strMeasure11: string | null,
+    strMeasure12: string | null,
+    strMeasure13: string | null,
+    strMeasure14: string | null,
+    strMeasure15: string | null,
+}
+
+export interface IDrinksObj{
+    drinks: IDrink[],
 }
 
 export interface IDrinkRecord{
     key: string,
-    data: IDrink,
+    drinks: IDrink[],
 }
 
 export interface IDrinksState{
-    drinks: IDrinkRecord[],
+    drinksArray: IDrinkRecord[],
 }

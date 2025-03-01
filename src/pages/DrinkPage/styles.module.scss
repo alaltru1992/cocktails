@@ -1,3 +1,37 @@
 .drink-page{
-  z-index: 1;
+  padding: 12px 10px 0 20px;
+  position: relative;
+  &__img{
+
+    position: absolute;
+    top: 30px;
+    right: 26px;
+    width: 40%;
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__wrapper{
+    margin: 30px;
+  }
+  &__title{
+    display: block;
+    font-size: 18px;
+    margin: 8px;
+    &-main{
+      font-size: 22px;
+    }
+  }
+
+  &__table-container {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  &__row{
+    display: contents;
+  }
 }
