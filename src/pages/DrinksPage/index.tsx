@@ -4,9 +4,9 @@ import {useLocation} from 'react-router-dom';
 import {useEffect, useMemo} from 'react';
 import {rootState} from 'configuration/store';
 import classes from './styles.module.scss';
-import {IDrinkRecord, IDrink, IDrinksObj} from 'types';
+import {IDrinkRecord, IDrink} from 'types';
 import {addDrink} from 'configuration/store/reducers/drinks';
-import DrinkPage from '../DrinkPage';
+import {DrinkPageLazy as DrinkPage} from '../DrinkPage';
 
 export default () =>{
 
@@ -17,7 +17,7 @@ export default () =>{
     const drinks = useSelector((state: rootState) => state.drinksSlice.drinksArray);
     const currentDrinksVariants = useMemo((): IDrink[] | undefined =>{
         return drinks.find(({key}) => key === drinkName )?.drinks
-    }, [drinks]);
+    }, [drinks, drinkName]);
     async function getCocktailData(url: string, key: string): Promise<void> {
         try {
             const response = await fetch(url);
