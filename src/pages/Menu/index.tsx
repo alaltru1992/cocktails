@@ -3,7 +3,7 @@ import classes from './styles.module.scss';
 import {COCKTAIL_NAMES} from "consts";
 import AppLink from '../../shared/AppLink';
 
-export default () =>{
+const Menu = () =>{
 
     return <div className={classes['menu-page']}>
         {
@@ -21,3 +21,5 @@ export default () =>{
         }
     </div>
 }
+
+export default Menu

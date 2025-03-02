@@ -5,9 +5,10 @@ interface IProps{
     children: ReactNode,
 }
 
-export default (props: IProps) =>{
+const CocktailsPage = (props: IProps) =>{
     const {children} = props;
     return <div className={classes['cocktails-page']}>
         {children}
     </div>
 }
+export default CocktailsPage

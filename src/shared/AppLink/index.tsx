@@ -7,10 +7,12 @@ interface AppLinkProps extends LinkProps{
     to: string,
 
 }
-export default (props: AppLinkProps ) =>{
+const AppLink = (props: AppLinkProps ) =>{
    const {className, to, children, ...otherProps} = props;
 
     return <Link className={classes['app-link']} to={to} {...otherProps}>
             {children}
         </Link>
 }
+
+export default AppLink

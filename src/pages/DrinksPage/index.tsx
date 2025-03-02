@@ -8,7 +8,7 @@ import {IDrinkRecord, IDrink} from 'types';
 import {addDrink} from 'configuration/store/reducers/drinks';
 import {DrinkPageLazy as DrinkPage} from '../DrinkPage';
 
-export default () =>{
+const DrinksPage = () =>{
 
     const dispatch = useDispatch();
     const location = useLocation();
@@ -52,3 +52,5 @@ export default () =>{
         }
     </div>
 }
+
+export default DrinksPage
