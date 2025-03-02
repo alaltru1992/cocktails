@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useMemo } from 'react';
+import {useDrinkName} from 'shared/hooks';
 import { rootState } from 'configuration/store';
 import classes from './styles.module.scss';
 import { IDrinkRecord, IDrink } from 'types';
@@ -10,9 +11,7 @@ import { DrinkPageLazy as DrinkPage } from '../DrinkPage';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
-  const { pathname } = location;
-  const drinkName = pathname.replace('/', '') || 'margarita';
+  const drinkName = useDrinkName();
   const drinks = useSelector(
     (state: rootState) => state.drinksSlice.drinksArray
   );
