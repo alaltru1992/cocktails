@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": " https://alaltru1992.github.io/cocktails/",
+  "homepage": "https://alaltru1992.github.io/cocktails",
   "scripts": {
     "start": "webpack server --env port=3000",
     "build": "webpack --env mode=production",
