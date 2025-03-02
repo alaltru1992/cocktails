@@ -8,6 +8,7 @@
     "start": "webpack server --env port=3000",
     "build": "webpack --env mode=production",
     "build:dev": "webpack --env mode=dev",
+    "deploy": "gh-pages -d build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{tsx,ts,js,jsx}' --write"
   },
