@@ -1,4 +1,4 @@
-import  path from 'path'
+import * as path from 'path'
 import  webpack from 'webpack'
 import {buildPaths, buildEnv} from "./config/build/types/config";
 import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
