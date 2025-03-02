@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useMemo } from 'react';
-import {useDrinkName} from 'shared/hooks';
+import { useDrinkName } from 'shared/hooks';
 import { rootState } from 'configuration/store';
 import classes from './styles.module.scss';
 import { IDrinkRecord, IDrink } from 'types';
@@ -39,7 +39,7 @@ const DrinksPage = () => {
     if (!drinks.find(({ key }) => key === currentDrinkName)) {
       getCocktailData(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${currentDrinkName}`,
-          currentDrinkName
+        currentDrinkName
       );
     }
   }, [drinkName, drinks]);

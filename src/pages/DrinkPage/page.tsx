@@ -118,7 +118,10 @@ const DrinkPage = (props: IDrinkProp) => {
         </div>
       </div>
 
-      <LazyLoadImage className={classes['drink-page__img']} src={strDrinkThumb} />
+      <LazyLoadImage
+        className={classes['drink-page__img']}
+        src={strDrinkThumb}
+      />
     </div>
   );
 };

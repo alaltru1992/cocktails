@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteProps } from 'react-router';
 import DrinksPage from 'pages/DrinksPage';
-import NotFoundPage from "pages/NotFoundPage";
+import NotFoundPage from 'pages/NotFoundPage';
 
 export enum AppRoutes {
   MARGARITA = 'margarita',
@@ -18,7 +18,7 @@ export const RoutePathes: Record<AppRoutes, string> = {
   [AppRoutes.MOJITO]: '/mojito',
   [AppRoutes.A1]: '/a1',
   [AppRoutes.KIR]: '/kir',
-  [AppRoutes.NOT_FOUND]: '*',
+  [AppRoutes.NOT_FOUND]: '*'
 };
 
 export const RouteConfig: Record<AppRoutes, RouteProps> = {
