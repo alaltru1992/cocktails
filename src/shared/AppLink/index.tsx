@@ -1,17 +1,19 @@
 import React from 'react';
-import { Link, LinkProps} from 'react-router-dom'
-import classes from './styles.module.scss'
+import { Link, LinkProps } from 'react-router-dom';
+import classes from './styles.module.scss';
 
-interface AppLinkProps extends LinkProps{
-    to: string,
+interface AppLinkProps extends LinkProps {
+  to: string;
 }
 
-const AppLink = (props: AppLinkProps ) =>{
-   const { to, children, ...otherProps} = props;
+const AppLink = (props: AppLinkProps) => {
+  const { to, children, ...otherProps } = props;
 
-    return <Link className={classes['app-link']} to={to} {...otherProps}>
-            {children}
-        </Link>
-}
+  return (
+    <Link className={classes['app-link']} to={to} {...otherProps}>
+      {children}
+    </Link>
+  );
+};
 
-export default AppLink
+export default AppLink;

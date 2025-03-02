@@ -5,14 +5,14 @@ import MenuPage from 'pages/Menu';
 import CocktailsPage from 'pages/CocktailsPage';
 
 const App = () => {
-    return (
-        <div className='app'>
-            <MenuPage />
-            <CocktailsPage>
-                <Router />
-            </CocktailsPage>
-        </div>
-    );
+  return (
+    <div className="app">
+      <MenuPage />
+      <CocktailsPage>
+        <Router />
+      </CocktailsPage>
+    </div>
+  );
 };
 
 export default App;
