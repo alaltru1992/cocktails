@@ -1,11 +1,95 @@
 import * as path from 'path'
 import  webpack from 'webpack'
-import {buildPaths, buildEnv, buildOptions} from "./config/build/types/config";
+import {buildPaths, buildEnv, buildOptions} from "./types/config";
+import HTMLWebpackPlugin from "html-webpack-plugin";
 import {WebpackConfiguration} from "webpack-cli";
-import {buildPlugins} from "./config/build/buildPlugins";
-import {buildLoaders} from "./config/build/buildLoaders";
-import {buildResolvers} from "./config/build/buildResolvers";
-import {buildDevServer} from "./config/build/buildDevServer";
+import {Configuration as DevServerConfiguration} from "webpack-dev-server";
+import miniCssExtractPlugin from "mini-css-extract-plugin";
+
+function buildDevServer({port}: buildOptions): DevServerConfiguration{
+    return {
+        port,
+        open: true,
+        historyApiFallback: true,
+    }
+}
+
+function buildLoaders(options:buildOptions): webpack.RuleSetRule[]{
+    const {isDev} = options;
+
+    const tsLoaders = {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            }
+        ]
+    }
+
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    const cssLoaders = {
+        test: /\.s[ac]ss$/i,
+        use: [
+            // Creates `style` nodes from JS strings
+            isDev ? 'style-loader' : miniCssExtractPlugin.loader,
+            // Translates CSS into CommonJS
+            {
+                loader: "css-loader",
+                options:{
+                    modules: {
+                        auto : (path: string) => path.includes('.module.'),
+                        localIdentName: isDev ? "[local]__[hash:base64:5]" : "[hash:base64:5]",
+                    },
+                }
+            },
+            // Compiles Sass to CSS
+            "sass-loader",
+        ],
+    }
+    return [
+        tsLoaders,
+        cssLoaders,
+        svgLoader,
+        fileLoader
+    ]
+}
+
+function buildPlugins(options: buildOptions): webpack.WebpackPluginInstance[] {
+    const {paths} = options;
+    return [
+        new webpack.ProgressPlugin(),
+        new HTMLWebpackPlugin({
+            template: paths.html
+        }),
+        new miniCssExtractPlugin({
+            filename: "css/[name].[contenthash:8].css",
+            chunkFilename: "css/[name].[contenthash:8].css"
+        })
+    ]
+}
+
+function buildResolvers(options:buildOptions): webpack.ResolveOptions{
+    return {
+        extensions: ['.tsx', '.ts', '.js'],
+        preferAbsolute: true,
+        modules: [
+            options.paths.src,
+            'node_modules'
+        ],
+        alias:{},
+        mainFiles:['index']
+    }
+}
 
 function buildWebpackConfig(options: buildOptions): WebpackConfiguration{
     const {mode, isDev, paths} = options;
