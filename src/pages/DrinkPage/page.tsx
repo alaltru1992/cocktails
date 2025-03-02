@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './styles.module.scss';
 import { IDrink } from 'types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface IDrinkProp {
   drink: IDrink;
@@ -117,7 +118,7 @@ const DrinkPage = (props: IDrinkProp) => {
         </div>
       </div>
 
-      <img className={classes['drink-page__img']} src={strDrinkThumb} />
+      <LazyLoadImage className={classes['drink-page__img']} src={strDrinkThumb} />
     </div>
   );
 };
