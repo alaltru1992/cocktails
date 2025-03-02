@@ -41,9 +41,6 @@ const DrinksPage = () =>{
         }
     },[drinkName, drinks])
 
-    if(currentDrinksVariants){
-
-    }
     return <div className={classes['drinks-page']}>
         {
            currentDrinksVariants && currentDrinksVariants.map((elm) =>{

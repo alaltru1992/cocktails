@@ -9,8 +9,8 @@ const Menu = () =>{
         {
             COCKTAIL_NAMES.map(({name, code}) =>{
                 return(
-                  <AppLink to={code}>
-                    <div key={name}  className={classes['menu-page-item']}>
+                  <AppLink key={name} to={code}>
+                    <div className={classes['menu-page-item']}>
                         <span className={classes['menu-page-text']}>
                             {name}
                         </span>
