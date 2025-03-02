@@ -10,7 +10,7 @@ const store = setupStore();
 
 render(
   <Provider store={store}>
-    <BrowserRouter basename={'/cocktails'}>
+    <BrowserRouter basename={'/'}>
       <App />
     </BrowserRouter>
   </Provider>,
