@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles/styles.scss';
 import Router from '../configuration/router'
 import MenuPage from 'pages/Menu';

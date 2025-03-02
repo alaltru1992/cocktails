@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './styles.module.scss';
 import {COCKTAIL_NAMES} from "consts";
 import AppLink from '../../shared/AppLink';

@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React from 'react';
 import { Link, LinkProps} from 'react-router-dom'
 import classes from './styles.module.scss'
 
