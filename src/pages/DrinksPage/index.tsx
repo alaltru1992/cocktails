@@ -12,7 +12,7 @@ const DrinksPage = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const { pathname } = location;
-  const drinkName = pathname.replace('/', '');
+  const drinkName = pathname.replace('/', '') || 'margarita';
   const drinks = useSelector(
     (state: rootState) => state.drinksSlice.drinksArray
   );
@@ -37,10 +37,11 @@ const DrinksPage = () => {
     }
   }
   useEffect(() => {
-    if (!drinks.find(({ key }) => key === drinkName)) {
+    const currentDrinkName = drinkName || 'margarita';
+    if (!drinks.find(({ key }) => key === currentDrinkName)) {
       getCocktailData(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`,
-        drinkName
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${currentDrinkName}`,
+          currentDrinkName
       );
     }
   }, [drinkName, drinks]);

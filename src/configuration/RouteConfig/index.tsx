@@ -21,7 +21,7 @@ export const RoutePathes: Record<AppRoutes, string> = {
 export const RouteConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePathes.main,
-    element: () => <></>
+    element: <DrinksPage />
   },
   [AppRoutes.MARGARITA]: {
     path: RoutePathes.margarita,
