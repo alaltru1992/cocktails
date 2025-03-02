@@ -6,7 +6,7 @@
   "homepage": "https://alaltru1992.github.io/cocktails",
   "scripts": {
     "start": "webpack server --env port=3000",
-    "build": "webpack --env mode=production",
+    "build": "webpack --config webpack.config.ts --env mode=production",
     "build:dev": "webpack --env mode=dev",
     "deploy": "gh-pages -d build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
